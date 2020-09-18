@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <title>Главная</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <div class="header_title row text-center text-sm-left">
+          <div class="header_title-logo col-12 col-md-2 col-lg-1 col-sm-12 text-center mb-3 mb-md-0">
+            <a href="#">
+              <img src="svg/header/header-logo.svg" alt="">
+            </a>
+          </div>
+          <div class="header_title-info col-12 col-md-10 col-lg-11 col-sm-12">
+            <h1 class="text-uppercase header_title-info__head">Министерство сельского хозяйства российской федерации</h1> <br>
+            <span class="header_title-info__about">Федеральное государственное бюджетное учреждение <br> “Управление мелиорации земель и сельскогохозяйственного водоснабжения по Саратовской области”. “САРАТОВМЕЛИОВОДХОЗ”</span>
+          </div>
+        </div>
+        <div class="header_nav row justify-content-between">
+          <ul class="header_nav-desktop list-unstyled text-uppercase row list-style-none d-none d-md-flex col-lg-12 col-xl-8 justify-content-between order-2 order-xl-1">
+            <li><a href="">Об учереждении</a></li>
+            <li><a href="">История</a></li>
+            <li><a href="">Новости</a></li>
+            <li><a href="">Фотогалерея</a></li>
+            <li><a href="">Контакты</a></li>
+            <li><a href="">Услуги</a></li>
+          </ul>
+          <div class="header_nav-btn order-2 col-12 d-md-none text-center" @click="showNav = !showNav">Меню <img src="svg/header/arrow-down.svg" alt=""></div>
+          <transition name="fade" mode="out-in">
+            <ul class="header_nav-mobile list-unstyled text-uppercase list-style-none order-2 d-md-none flex-column text-center col-12" v-if="showNav">
+              <li><a href="">Об учереждении</a></li>
+              <li><a href="">История</a></li>
+              <li><a href="">Новости</a></li>
+              <li><a href="">Фотогалерея</a></li>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Услуги</a></li>
+            </ul>
+          </transition>
+          <div class="header_nav-phone col-md-12 text-center col-xl-4 text-xl-right p-0 order-1 order-xl-2">
+            <a href="#">
+              8 (8452) 22-74-00
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header end -->
+    <!-- Main section start -->
+    <main>
+      <div class="container">
+        <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link text-uppercase active" id="home-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">История</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase" id="profile-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="profile" aria-selected="false">Руководители</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase" id="profile-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="profile" aria-selected="false">Музей</a>
+          </li>
+        </ul>
+        <div class="float-right p-3">
+          <div class="post_wrap flex-column">
+            <div class="post_wrap-title col-12 pl-0">
+              <span>Новости</span>
+            </div>
+            <a href="#">
+              <div class="post_head d-flex align-items-end" style="background-image: url(<? echo get_template_directory_uri(); ?>img/post-head.png);">
+                <div class="post_head-background flex-column">
+                  <div class="post_head-content-wrap">
+                    <div class="post-head_title col-12">Заголовок</div>
+                    <div class="post-head_date col-12"><img src="<? echo get_template_directory_uri(); ?>svg/clock.svg" alt="">20 Марта, 2020</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="post row">
+                <div class="post_img col-md-3 col-xl-5 col-lg-2">
+                  <img src="<? echo get_template_directory_uri(); ?>img/post.png" alt="">
+                </div>
+                <div class="col-7 row pl-0">
+                  <div class="post_title col-12">Заголовок</div>
+                  <div class="post_date-wrap d-flex align-items-end col-12">
+                    <div class="post_date">
+                      <img src="<? echo get_template_directory_uri(); ?>svg/clock-blue.svg" alt="">20 Марта, 2020
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="post row">
+                <div class="post_img col-md-3 col-xl-5 col-lg-2">
+                  <img src="<? echo get_template_directory_uri(); ?>img/post-2.png" alt="">
+                </div>
+                <div class="col-7 row pl-0">
+                  <div class="post_title col-12">Заголовок</div>
+                  <div class="post_date-wrap d-flex align-items-end col-12">
+                    <div class="post_date">
+                      <img src="<? echo get_template_directory_uri(); ?>svg/clock-blue.svg" alt="">20 Марта, 2020
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="post_all">
+              <a href="#">Все новости</a>
+            </div>
+          </div>
+        </div>
+        <section class="clearfix">
+          <div class="tab-content mt-3 mb-4" id="myTabContent">
+          <div id="tab1" class="tab-pane fade show active" role="tabpanel">
+            <div class="mt-2 mb-3">
+              <span class="history_head text-uppercase">ИЗ ИСТОРИИ МЕЛИОРАЦИИ САРАТОВСКОЙ ОБЛАСТИ</span>
+            </div>
+            <a href="img/istoriya.png"><img src="<? echo get_template_directory_uri(); ?>img/istoriya.png" alt=""></a>
+            <p class="mt-3">Пыльные бури, суховеи, часто повторяющиеся засухи - все это мешает земледельцам Заволжья стабильно получать высокие урожаи. Природные катаклизмы наносят ощути­мый урон экономике региона, порой сводят на нет труд и старание сельчан.</p>
+
+            <p>Кроме того, в летнюю пору реки сильно мелеют, пруды и другие водоемы пересыхают. В сельских населенных пунктах, несмотря на принимаемые меры, катастрофически не хватает питьевой воды. И как итог всем бедам - миграция семей земледельцев с насиженных мест в более благоприятные по природным условиям регионы.</p>
+
+            <p>Засушливые земли Саратовского Заволжья летом представляли собой безрадостную картину: выжженная солнцем трава и почва, испещренная глубокими трещинами. Не хватало обычной питьевой воды. Заволжье считалось краем без будущего: невыносимая жара и частые засухи не оставляли надежды на развитие земледелия. Степные жители еще помнят то время, когда в сутки получали по ведру привозимой воды. Самой жестокой стала засуха 1972 года, пересохли почти все реки и пруды. Воду привозили на тракторах и машинах. Скотину спасали в правобережных районах, а корма пришлось доставлять из Латвии, Молдавии и Сибири, что было экономически невыгодно.</p>
+
+            <p>Единственным выходом из создавшейся катастрофической ситуации для населения Саратовского Заволжья было создание системы искусственного водоснабжения. О такой возможности задумывались ученые, инженеры и аграрии еще в XIX веке. Даже была написана брошюра "Меры против засухи". Первые прообразы сегодняшней оросительной системы появились в 1846 году. С их помощью возделывались лишь 1400 гектаров земли.</p>
+
+            <p>Вопросы сельскохозяйственной мелиорации широко были представлены на съездах сельских хозяйств в Одессе (1878г.), Саратове (1893г.), Москве (1895г.), Новочеркасске (1902г.), Астрахани (1911г.), Киеве (1913г.). География съездов была обширна, они охватывали всю страну.</p>
+
+            <p>Широко были обсуждены вопросы обводнения и орошения на съезде в г.Саратове (1893г.), где среди докладчиков выступал И.И. Жилинский - начальник экспедиции по орошению на юге России. Им предложена широкая программа о создании опытных станций по мелиоративным делам. Со многими предложениями по орошению Юго-Восточного края выступил П.А. Костычев - ученый почвовед-земледел.</p>
+
+            <p>На съезде единогласно было принято несколько постановлений, в которых указывалось: «Признать, что орошение и обводнение составляют дело первостепенной государственной важности и насущную потребность сельского хозяйства Юго-Восточного края».</p>
+
+            <p>В октябре 1927г. на заседании Совета Народных Комисаров СССР был рассмотрен вопрос о реконструкции сельского хозяйства острозасушливого района Поволжья на водохозяйственной базе. На Госплан СССР возлагалось производство работ по уточнению схемы орошения. Созданная для этих целей Особая комиссия под председа­тельством сотрудника водной секции Госплана СССР А.В. Чаплыгина провела работу по уточнению схемы орошения.</p>
+
+            <p>В тезисах А.В. Чаплыгина, направленных СНК СССР и членам Госплана, сказано:</p>
+
+            <p>1."Проблему реконструкции сельского хозяйства Заволжья в целях борьбы с засухой откладывать нельзя не только, потому, что решение ее обуславливает решение пшеничной проблемы, но и потому, что в силу значительной сельскохозяйственной освоенности острозасушливого района, здесь в связи с засухой создалась проблема голода и государство вынуждено периодически нести огромные затраты на поддержание существующего в районе сельского хозяйства..."</p>
+
+            <p>2."Средством действительной борьбы с засухой в Заволжье является подведение под его сельское хозяйство водохозяйственной базы, обеспечивающей снабжение посевов необходимым для произрастания растений количеством воды и создающей возможности устранить тяжкое для крестьянского хозяйства дальноземелье..."</p>
+
+            <p>3."Исследование экономической стороны вопроса привело к выводу, что орошение Заволжья целесообразно не только с точки зрения предупреждения периодически повторяющихся народнохозяйственных катастроф - голода от засухи, но и как мероприятие, подымающее сельское хозяйство на новую, экономически высшую ступень..."</p>
+
+            <p>4."Ирригация является не только самым надежным, но и самым эффективным из выдвинутых пока возможностей борьбы с засухой...".</p>
+
+            <p>Комиссия предлагала в ближайшие пять лет провести изыскания, исследования этой схемы с тем, чтобы потом приступить к подготовке проекта широкой ирригации Заволжья.</p>
+
+            <p>О том, насколько ценной была разработка схемы орошения, составленной с использованием дореволюционных материалов, свидетельствует следующий факт: многие каналы и сооружения в наше время построены в тех местах, которые были тогда предусмотрены.</p>
+
+            <p>В 1930г. Правительство поручило работы над проблемами орошения на Волге крупным ученым академикам Н.И.Вавилову, И.Г.Александрову,
+            В.А.Чаплыгину, Н.Н.Тулайкову, А.Н.Костикову, профессору Г.К. Ризенкампфу.</p>
+
+            <p>Долгие годы отдельные сельхозпроизводители использовали воду местного стока на орошение небольших земельных участков. В целях оказания им помощи в организации создания орошаемых участков и их эксплуатации создавались областные и районные органы управления. Так, в 20 - 50 годы XX века действовали отделы при земельном отделе, при управлении сельского хозяйства, даже при облисполкоме. В 1954г. по решению Совета министров РСФСР было создано областное управление по мелиорации и водному хозяйству, преобразованное затем в Комитет «Саратовмелиоводхоз», а в 2002г. в Федеральное государственное учреждение «Управление мелиорации земель и селькохозяйственного водоснабжения по Саратовской области» - ФГУ «Управление «Саратовмелиоводхоз».</p>
+
+            <p>Четыре десятилетия отделяют нас от того дня, когда по решению Правительства СССР в области развернулось мощное водохозяйственное строительство. Важным его звеном стала прокладка рукотворной реки - Саратовского оросительно-обводнительного канала. Темпы стройки были настолько высоки, что уже 8 сентября 1972 года вблизи Балакова заработали установки пяти насосных станций и по бетонному руслу волжская вода пошла в пересыхающие реки Заволжья - Большой и Малый Узени.</p>
+
+            <p>В засушливый регион области (11 крупных по территории районов) пришла вода. Проделана огромная по своим масштабам работа: за короткий промежуток времени построен 126-километровый канал с каскадом насосных станций, проходная способность его самоходной части составила 112 куб. м/с.</p>
+
+            <p>Общая высота подъема воды от берега Волги (у Балаково) до ГТС, что находится у поселка Горный, достигла 92 метра.</p>
+
+            <p>Рукотворная магистраль, пополнив пересыхающие реки, пруды и другие водоемы, принесла людям надежду и веру в будущее. Развернулось крупное жилищное строительство, рядом с новыми домами строились социально-значимые объекты - детские сады, школы, больницы, дворцы культуры.</p>
+
+            <p>80-е годы прошлого века - пик развития мелиорации земель в области: Введены в эксплуатацию крупные водохранилища, сотни километров магистральных и межхозяйственных каналов, водоводов, а в населенных пунктах проложены водопроводные сети со станциями очистных сооружений.</p>
+
+            <p>К 1990 году в области уже насчитывалось более полумиллиона гектаров мелиорированных земель. Селянам эти участки сдавались с высоким качеством, что позволяло им получать стабильно высокие урожаи кормовых и овощных культур. С помощью современных дождевальных машин была решена проблема кормопроизводства. Стабильная кормовая база позволила увеличить надои молока, обеспечить население мясом и овощами.</p>
+
+            <p>Не все гладко было в истории развития мелиорации. Ошибочная политика 90-х годов прошлого века и уменьшение финансирования привели к потере почти половины орошаемых земель. Но сама жизнь и практика использования сельскохозяйственных угодий в рискованной зоне земледелия показали, что альтернативы нет. Нужно возрождать мелиорацию. И это великое благо, что коллективу ФГБУ "Саратовмелиоводхоз" в трудных условиях удалось сохранить созданный ранее мелиоративный комплекс.</p>
+          </div>
+          <div id="tab2"  class="tab-pane fade" role="tabpanel">
+            <div class="rukovoditeli_head">
+              <span>РУКОВОДИТЕЛИ ОБЛАСТНЫХ ОРГАНОВ УПРАВЛЕНИЯ МЕЛИОРАЦИЕЙ И ВОДНЫМ ХОЗЯЙСТВОМ САРАТОВСКОЙ ОБЛАСТИ</span>
+            </div>
+            <div class="rukovoditeli_wrap mt-3">
+              <div class="col-12">
+                <span class="rukovoditeli_name">Алексеев Олег Александрович</span>
+                <span>2019г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Гордиенко Василий  Викторович</span>
+                <span>2019г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Заигралов Юрий Александрович</span>
+                <span>август 2016 г.-2019 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Соколов Владимир Викторович  </span>
+                <span>2008 г.- июль 2016 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Волков Анатолий Викторович</span>
+                <span>2004 г.- 2008 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Гордиенко Василий  Викторович</span>
+                <span>2002 г.- 2004 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Нагорный Владимир Афанасьевич</span>
+                <span>1996 г.- 2002 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Иванков Владимир Иванович</span>
+                <span>1986 г.- 1996 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Ковалев Валерий Николаевич</span>
+                <span>1980 г.- 1985 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Хонин Николай Петрович</span>
+                <span>1975 г.- 1980 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Шашков Борис Максимович</span>
+                <span>1962 г.- 1975 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Карякин Федор Федорович</span>
+                <span>1957 г.- 1961 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Пеньков Андрей Иванович</span>
+                <span>1944 г.- 1950 г.</span>
+              </div>
+              <div class="col-12">
+                <span class="rukovoditeli_name">Филиппов Герасим Кузьмич</span>
+                <span>1937 г.- 1944 г.</span>
+              </div>
+            </div>
+          </div>
+          <div id="tab3"  class="tab-pane fade" role="tabpanel">
+
+          </div>
+        </div>
+        </section>
+      </div>
+    </main>
+    <!-- Main section end -->
+    <!-- Footer start -->
+    <footer>
+      <div class="container">
+        <div class="footer_wrap row">
+          <div class="footer_nav col-lg-2 col-md-6 col-12">
+            <div class="footer_nav-title">
+              <span class="text-uppercase">Меню</span>
+            </div>
+            <div class="footer_nav-list">
+              <ul class="list-unstyled list-style-none flex-column">
+                <li><a href="#">Об учереждении</a></li>
+                <li><a href="#">Структура</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Фотогалерея</a></li>
+                <li><a href="#">Музей</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Услуги</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer_link col-lg-4 col-md-6 col-12">
+            <div class="footer_link-title">
+              <span class="text-uppercase">
+              Полезные ссылки
+              </span>
+            </div>
+            <div class="footer_link-list">
+              <ul class="list-unstyled list-style-none flex-column">
+                <li><a href="#">Анонсы</a></a></a></li>
+                <li><a href="#">Министерство сельского хозяйства РФ</a></li>
+                <li><a href="#">ФГБНУ ВНИИ “РАДУГА”</a></li>
+                <li><a href="#">Правительство Саратовской области</a></li>
+                <li><a href="#">Портал правовой информации</a></li>
+                <li><a href="#">Телеканал Агро-ТВ</a></li>
+                <li><a href="#">
+                  Министерство сельского хозяйства Саратовской области
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer_contacts col-lg-3 col-md-6 col-12 pl-3 pl-lg-5">
+            <div class="footer_link-title">
+              <span class="text-uppercase">
+              Контакты
+              </span>
+            </div>
+            <div class="footer_contacts-list">
+              <ul class="list-unstyled list-style-none flex-column">
+                <li><img src="svg/footer/footer-mail.svg" alt="">contact@lop.com</li>
+                <li><img src="svg/footer/footer-phone.svg" alt="">8 (8452) 00 - 00 - 00</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer_social col-lg-3 col-md-6 col-12 pl-3 pl-lg-5">
+            <div class="footer_link-title">
+              <span class="text-uppercase">
+              Соц сети
+              </span>
+            </div>
+            <div class="footer_social-list">
+              <ul class="list-unstyled list-style-none">
+                <!-- <li><a href=""><img src="svg/footer/twitter.svg" alt="twitter"></a></li> -->
+                <!-- <li><a href=""><img src="svg/footer/facebook.svg" alt="facebook"></a></li> -->
+                <li><a href="https://www.instagram.com/sarvodhoz/" target="_blank"><img src="svg/footer/instagram.svg" alt="instagram"></a></li>
+                <!-- <li><a href=""><img src="svg/footer/youtube.svg" alt="youtube"></a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer_copyright text-center">“САРАТОВМЕЛИОВОДХОЗ” 2020</div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/vue.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
